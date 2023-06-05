@@ -14,7 +14,7 @@ const { registerValidation, loginValidation } = require('../config/validation')
 // register
 router.post('/register', async (req, res) => {
     // data req.body divalidasi
-    const { error } = registerValidation(req.body)
+    const {error} = registerValidation(req.body)
     // jika req.body tidak valid, beri response 400 dan tampilkan message
     if (error) return res.status(400).json({
         status: res.statusCode,

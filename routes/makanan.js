@@ -3,6 +3,9 @@ const express = require('express')
 const router = express.Router()
 const Makanan = require('../models/Makanan')
 
+// Import verifyToken
+const verifyToken = require('../config/verifyToken')
+
 // Create api
 router.post('/', async(req, res) => {
     
@@ -24,7 +27,7 @@ router.post('/', async(req, res) => {
 })
 
 // Read API
-router.get('/', async(req, res) => {
+router.get('/', verifyToken,async(req, res) => {
 
     try{
         const makanan = await Makanan.find()

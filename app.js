@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const authRoutes = require('./routes/auth')
 require('dotenv/config')
 
 // (6) middleware body-parser
@@ -16,6 +17,7 @@ const makananRoutes = require('./routes/makanan')
 
 //(8) app.use (Mendaftarkan middleware baru ke Express)
 app.use('/makanan', makananRoutes)
+app.use('/auth', authRoutes)
 
 
 
