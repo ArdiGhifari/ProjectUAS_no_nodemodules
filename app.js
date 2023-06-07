@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const authRoutes = require('./routes/auth')
 require('dotenv/config')
-const cors = require('/cors')
+const cors = require('node_modules/cors')
 
 app.use(cors())
 // (6) middleware body-parser
